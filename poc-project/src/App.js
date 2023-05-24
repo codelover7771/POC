@@ -1,25 +1,23 @@
 
 import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import VerticalTabs from './components/VericalTabs';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import DataComponent from './components/DataComponent';
+import data from "./data.json";
+
 
 const App = () => {
-  const currentRoute = '/paper';
   return (
-    <Router>
+   
       <div className="border border-indigo-600">
-        <Navbar/>
-        <VerticalTabs currentRoute={currentRoute}/>
-        {/* <div className="content">
-          <HorizontalTable />
-          <VerticalTabs />
-          <Route path="/paper" component={PaperFormulation} />
-          <Route path="/prototype" component={PrototypeBuilding} />
-          <Route path="/lab" component={LabTesting} />
-          <Route path="/shipment" component={ShipmentFeedback} />
-        </div> */}
+        <Navbar data = {data}/>
+          <Routes>
+          <Route path="/" element={<DataComponent/>} />
+          <Route path="/prototype" element={<DataComponent/>} />
+          <Route path="/testing" element={<DataComponent/>} />
+          <Route path="/feedback" element={<DataComponent/>} />
+          </Routes>
       </div>
-    </Router>
+     
   );
 };
 

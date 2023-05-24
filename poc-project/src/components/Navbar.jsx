@@ -1,34 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { AiOutlineArrowRight } from 'react-icons/ai';
+import { connect} from 'react-redux';
+import { setMainMenu } from '../redux/actions';
 
-const Navbar = () => {
+const Navbar = ({ setMainMenu, data }) => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const navLinks = [
-    { title: 'Paper Formulation', path: '/paper' },
-    { title: 'Prototype Building', path: '/prototype' },
-    { title: 'Lab Testing', path: '/lab' },
-    { title: 'Shipment & Feedback', path: '/shipment' },
-  ];
+ 
+  console.log(data)
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+      setMainMenu(data.mainmenu[0]);
+  }, []);
+    
   const renderNavLinks = () => {
-    return navLinks.map((link, index) => (
+    return data.mainmenu?.map((link, index) => (
         <>
       <Link
         key={index}
         to={link.path}
+        onClick={() => setMainMenu(link)}
         className="block text-2xl mt-0 lg:inline-block  text-white hover:text-gray-300 mr-4"
       >
-        {link.title}
+        {link.name}
       </Link>
       {
-        index < navLinks.length-1 
+        index < data.mainmenu.length-1 
         ? 
         <AiOutlineArrowRight className='block text-lg mt-4 lg:inline-block  text-white hover:text-gray-300 mr-4'>
         </AiOutlineArrowRight>
@@ -78,4 +80,8 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+const mapStateToProps = (state) => ({
+  mainMenu: state.mainMenu,
+});
+
+export default connect(mapStateToProps, { setMainMenu })(Navbar);

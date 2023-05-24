@@ -1,49 +1,47 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import TableData from './TableData';
 
-const VerticalTabs = ({ currentRoute }) => {
-  const [activeTab, setActiveTab] = useState(currentRoute);
+const VerticalTabs = ({ menuName }) => {
+  const [activeTab, setActiveTab] = useState(0);
+  const [activeProcess, setActiveProcess] = useState(0);
 
-  const handleTabClick = (tab) => {
-    setActiveTab(tab);
+  const handleTabClick = (index) => {
+    setActiveTab(index);
+  };
+
+  useEffect(()=>{
+    setActiveProcess(menuName.name)
+  },[menuName])
+
+  const renderTabs = () => {
+    if (menuName && menuName.submenu && Array.isArray(menuName.submenu)) {
+      return menuName.submenu.map((item, index) => (
+        <div
+          key={index}
+          className={`w-3/4 p-4 cursor-pointer ${
+            activeTab === index ? 'bg-gray-300' : ''
+          }`}
+          onClick={() => handleTabClick(index)}
+        >
+          {item.name}
+        </div>
+      ));
+    }
+
+    // Return a placeholder or null if the submenu is not available
+    return null;
   };
 
   return (
-    <div className="flex">
-      <div className="w-1/4">
-        <div
-          className={`py-2 px-4 cursor-pointer ${
-            activeTab === currentRoute ? 'bg-gray-300' : ''
-          }`}
-          onClick={() => handleTabClick(currentRoute)}
-        >
-          {currentRoute}
-        </div>
-        <div
-          className={`py-2 px-4 cursor-pointer ${
-            activeTab === 'Benchmark Procurement' ? 'bg-gray-300' : ''
-          }`}
-          onClick={() => handleTabClick('Benchmark Procurement')}
-        >
-          Benchmark Procurement
-        </div>
-        <div
-          className={`py-2 px-4 cursor-pointer ${
-            activeTab === 'Brief Alignment' ? 'bg-gray-300' : ''
-          }`}
-          onClick={() => handleTabClick('Brief Alignment')}
-        >
-          Brief Alignment
-        </div>
+    <div className="w-full flex justify-center align-items-center">
+
+      <div className='w-1/4'>
+        {renderTabs()}
+        <div className='py-2 px-4 bg-white'>{activeProcess}</div>
       </div>
       <div className="w-3/4">
-        {activeTab === currentRoute && (
-          <div className="p-4">Content for {currentRoute}</div>
-        )}
-        {activeTab === 'Benchmark Procurement' && (
-          <div className="p-4">Content for Benchmark Procurement</div>
-        )}
-        {activeTab === 'Brief Alignment' && (
-          <div className="p-4">Content for Brief Alignment</div>
+        {menuName && menuName.submenu && Array.isArray(menuName.submenu) && (
+          <TableData data={menuName.submenu[activeTab]} />
         )}
       </div>
     </div>

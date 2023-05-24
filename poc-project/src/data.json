@@ -1,0 +1,280 @@
+{
+    "mainmenu" : [
+        {
+        "name" : "Paper Formulation",
+        "path" : "/",
+        "submenu" : [
+            {"name" : "Benchmark Procurement",
+            "activities" : [
+                "sharing brief product",
+            "formulation responsibility allocation",
+            "brief discussion to r & d head",
+            "brief discussion to frd"
+            ],
+            "due_date": [
+                "2023-06-15",
+                "2023-07-02",
+                "2023-06-30",
+                "2023-07-10"
+              ],
+              "accountable": [
+                "John Doe",
+                "Jane Smith",
+                "Michael Johnson",
+                "Emily Davis"
+              ],
+              "status": [
+                "red",
+                "green",
+                "yellow",
+                "green"
+              ],
+              "artifact": [
+                "Report A",
+                "Data B",
+                "Presentation C",
+                "Analysis D"
+              ]
+            },
+            {"name" : "Brief_Alignment",
+            "activities": [
+              "sharing brief product",
+              "formulation responsibility allocation",
+              "brief discussion to r & d head",
+              "brief discussion to frd"
+            ],
+            "due_date": [
+              "2023-06-15",
+              "2023-07-02",
+              "2023-06-30",
+              "2023-07-10"
+            ],
+            "accountable": [
+              "John Doe",
+              "Jane Smith",
+              "Michael Johnson",
+              "Emily Davis"
+            ],
+            "status": [
+              "red",
+              "green",
+              "yellow",
+              "green"
+            ],
+            "artifact": [
+              "Report A",
+              "Data B",
+              "Presentation C",
+              "Analysis D"
+            ]
+            }]
+        },
+        {
+            "name" : "Prototype Building",
+            "path" : "/prototype",
+            "submenu" : [
+                {"name" : "Benchmark Procurement",
+                "activities" : [
+                    "sharing brief product",
+                "formulation responsibility allocation",
+                "brief discussion to r & d head",
+                "brief discussion to frd"
+                ],
+                "due_date": [
+                    "2023-06-15",
+                    "2023-07-02",
+                    "2023-06-30",
+                    "2023-07-10"
+                  ],
+                  "accountable": [
+                    "John Doe",
+                    "Jane Smith",
+                    "Michael Johnson",
+                    "Emily Davis"
+                  ],
+                  "status": [
+                    "red",
+                    "green",
+                    "yellow",
+                    "green"
+                  ],
+                  "artifact": [
+                    "Report A",
+                    "Data B",
+                    "Presentation C",
+                    "Analysis D"
+                  ]
+                },
+                {"name" : "Brief_Alignment",
+                "activities": [
+                  "sharing brief product",
+                  "formulation responsibility allocation",
+                  "brief discussion to r & d head",
+                  "brief discussion to frd"
+                ],
+                "due_date": [
+                  "2023-06-15",
+                  "2023-07-02",
+                  "2023-06-30",
+                  "2023-07-10"
+                ],
+                "accountable": [
+                  "John Doe",
+                  "Jane Smith",
+                  "Michael Johnson",
+                  "Emily Davis"
+                ],
+                "status": [
+                  "red",
+                  "green",
+                  "yellow",
+                  "green"
+                ],
+                "artifact": [
+                  "Report A",
+                  "Data B",
+                  "Presentation C",
+                  "Analysis D"
+                ]
+                }]
+        },
+        {
+            "name" : "Lab Testing",
+            "path" : "/testing",
+            "submenu" : [
+                {"name" : "Benchmark Procurement",
+                "activities" : [
+                    "sharing brief product",
+                "formulation responsibility allocation",
+                "brief discussion to r & d head",
+                "brief discussion to frd"
+                ],
+                "due_date": [
+                    "2023-06-15",
+                    "2023-07-02",
+                    "2023-06-30",
+                    "2023-07-10"
+                  ],
+                  "accountable": [
+                    "John Doe",
+                    "Jane Smith",
+                    "Michael Johnson",
+                    "Emily Davis"
+                  ],
+                  "status": [
+                    "red",
+                    "green",
+                    "yellow",
+                    "green"
+                  ],
+                  "artifact": [
+                    "Report A",
+                    "Data B",
+                    "Presentation C",
+                    "Analysis D"
+                  ]
+                },
+                {"name" : "Brief_Alignment",
+                "activities": [
+                  "sharing brief product",
+                  "formulation responsibility allocation",
+                  "brief discussion to r & d head",
+                  "brief discussion to frd"
+                ],
+                "due_date": [
+                  "2023-06-15",
+                  "2023-07-02",
+                  "2023-06-30",
+                  "2023-07-10"
+                ],
+                "accountable": [
+                  "John Doe",
+                  "Jane Smith",
+                  "Michael Johnson",
+                  "Emily Davis"
+                ],
+                "status": [
+                  "red",
+                  "green",
+                  "yellow",
+                  "green"
+                ],
+                "artifact": [
+                  "Report A",
+                  "Data B",
+                  "Presentation C",
+                  "Analysis D"
+                ]
+                }]
+        },
+        {
+            "name" : "Shipment & Feedback",
+            "path" : "/feedback",
+            "submenu" : [
+                {"name" : "Benchmark Procurement",
+                "activities" : [
+                    "sharing brief product",
+                "formulation responsibility allocation",
+                "brief discussion to r & d head",
+                "brief discussion to frd"
+                ],
+                "due_date": [
+                    "2023-06-15",
+                    "2023-07-02",
+                    "2023-06-30",
+                    "2023-07-10"
+                  ],
+                  "accountable": [
+                    "John Doe",
+                    "Jane Smith",
+                    "Michael Johnson",
+                    "Emily Davis"
+                  ],
+                  "status": [
+                    "red",
+                    "green",
+                    "yellow",
+                    "green"
+                  ],
+                  "artifact": [
+                    "Report A",
+                    "Data B",
+                    "Presentation C",
+                    "Analysis D"
+                  ]
+                },
+                {"name" : "Brief_Alignment",
+                "activities": [
+                  "sharing brief product",
+                  "formulation responsibility allocation",
+                  "brief discussion to r & d head",
+                  "brief discussion to frd"
+                ],
+                "due_date": [
+                  "2023-06-15",
+                  "2023-07-02",
+                  "2023-06-30",
+                  "2023-07-10"
+                ],
+                "accountable": [
+                  "John Doe",
+                  "Jane Smith",
+                  "Michael Johnson",
+                  "Emily Davis"
+                ],
+                "status": [
+                  "red",
+                  "green",
+                  "yellow",
+                  "green"
+                ],
+                "artifact": [
+                  "Report A",
+                  "Data B",
+                  "Presentation C",
+                  "Analysis D"
+                ]
+                }]
+        }
+        ]
+}
