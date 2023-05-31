@@ -4,13 +4,26 @@
         "name" : "Paper Formulation",
         "path" : "/",
         "submenu" : [
-            {"name" : "Benchmark Procurement",
-            "activities" : [
-                "sharing brief product",
-            "formulation responsibility allocation",
-            "brief discussion to r & d head",
-            "brief discussion to frd"
-            ],
+            {
+              "name": "Benchmark Procurement",
+              "activities": [
+              {
+              "activity": "sharing brief product",
+              "completed": false
+              },
+              {
+              "activity": "formulation responsibility allocation",
+              "completed": false
+              },
+              {
+              "activity": "brief discussion to r & d head",
+              "completed": true
+              },
+              {
+              "activity": "brief discussion to frd",
+              "completed": false
+              }
+              ],
             "due_date": [
                 "2023-06-15",
                 "2023-07-02",
@@ -38,11 +51,23 @@
             },
             {"name" : "Brief_Alignment",
             "activities": [
-              "sharing brief product",
-              "formulation responsibility allocation",
-              "brief discussion to r & d head",
-              "brief discussion to frd"
-            ],
+              {
+              "activity": "sharing brief product",
+              "completed": false
+              },
+              {
+              "activity": "formulation responsibility allocation",
+              "completed": true
+              },
+              {
+              "activity": "brief discussion to r & d head",
+              "completed": true
+              },
+              {
+              "activity": "brief discussion to frd",
+              "completed": false
+              }
+              ],              
             "due_date": [
               "2023-06-15",
               "2023-07-02",
@@ -74,12 +99,24 @@
             "path" : "/prototype",
             "submenu" : [
                 {"name" : "Benchmark Procurement",
-                "activities" : [
-                    "sharing brief product",
-                "formulation responsibility allocation",
-                "brief discussion to r & d head",
-                "brief discussion to frd"
-                ],
+                "activities": [
+                  {
+                  "activity": "sharing brief product",
+                  "completed": false
+                  },
+                  {
+                  "activity": "formulation responsibility allocation",
+                  "completed": false
+                  },
+                  {
+                  "activity": "brief discussion to r & d head",
+                  "completed": true
+                  },
+                  {
+                  "activity": "brief discussion to frd",
+                  "completed": false
+                  }
+                  ],                  
                 "due_date": [
                     "2023-06-15",
                     "2023-07-02",
@@ -107,10 +144,22 @@
                 },
                 {"name" : "Brief_Alignment",
                 "activities": [
-                  "sharing brief product",
-                  "formulation responsibility allocation",
-                  "brief discussion to r & d head",
-                  "brief discussion to frd"
+                  {
+                  "activity": "sharing brief product",
+                  "completed": false
+                  },
+                  {
+                  "activity": "formulation responsibility allocation",
+                  "completed": true
+                  },
+                  {
+                  "activity": "brief discussion to r & d head",
+                  "completed": true
+                  },
+                  {
+                  "activity": "brief discussion to frd",
+                  "completed": true
+                  }
                 ],
                 "due_date": [
                   "2023-06-15",
@@ -143,12 +192,24 @@
             "path" : "/testing",
             "submenu" : [
                 {"name" : "Benchmark Procurement",
-                "activities" : [
-                    "sharing brief product",
-                "formulation responsibility allocation",
-                "brief discussion to r & d head",
-                "brief discussion to frd"
-                ],
+                "activities": [
+                  {
+                  "activity": "sharing brief product",
+                  "completed": true
+                  },
+                  {
+                  "activity": "formulation responsibility allocation",
+                  "completed": false
+                  },
+                  {
+                  "activity": "brief discussion to r & d head",
+                  "completed": true
+                  },
+                  {
+                  "activity": "brief discussion to frd",
+                  "completed": false
+                  }
+                  ],
                 "due_date": [
                     "2023-06-15",
                     "2023-07-02",
@@ -176,11 +237,23 @@
                 },
                 {"name" : "Brief_Alignment",
                 "activities": [
-                  "sharing brief product",
-                  "formulation responsibility allocation",
-                  "brief discussion to r & d head",
-                  "brief discussion to frd"
-                ],
+                  {
+                  "activity": "sharing brief product",
+                  "completed": false
+                  },
+                  {
+                  "activity": "formulation responsibility allocation",
+                  "completed": false
+                  },
+                  {
+                  "activity": "brief discussion to r & d head",
+                  "completed": false
+                  },
+                  {
+                  "activity": "brief discussion to frd",
+                  "completed": true
+                  }
+                  ],
                 "due_date": [
                   "2023-06-15",
                   "2023-07-02",
@@ -212,12 +285,24 @@
             "path" : "/feedback",
             "submenu" : [
                 {"name" : "Benchmark Procurement",
-                "activities" : [
-                    "sharing brief product",
-                "formulation responsibility allocation",
-                "brief discussion to r & d head",
-                "brief discussion to frd"
-                ],
+                "activities": [
+                  {
+                  "activity": "sharing brief product",
+                  "completed": true
+                  },
+                  {
+                  "activity": "formulation responsibility allocation",
+                  "completed": true
+                  },
+                  {
+                  "activity": "brief discussion to r & d head",
+                  "completed": false
+                  },
+                  {
+                  "activity": "brief discussion to frd",
+                  "completed": false
+                  }
+                  ],
                 "due_date": [
                     "2023-06-15",
                     "2023-07-02",
@@ -245,11 +330,23 @@
                 },
                 {"name" : "Brief_Alignment",
                 "activities": [
-                  "sharing brief product",
-                  "formulation responsibility allocation",
-                  "brief discussion to r & d head",
-                  "brief discussion to frd"
-                ],
+                  {
+                  "activity": "sharing brief product",
+                  "completed": false
+                  },
+                  {
+                  "activity": "formulation responsibility allocation",
+                  "completed": false
+                  },
+                  {
+                  "activity": "brief discussion to r & d head",
+                  "completed": true
+                  },
+                  {
+                  "activity": "brief discussion to frd",
+                  "completed": true
+                  }
+                  ],
                 "due_date": [
                   "2023-06-15",
                   "2023-07-02",

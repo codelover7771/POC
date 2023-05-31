@@ -2,20 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { AiOutlineArrowRight } from 'react-icons/ai';
-import { connect} from 'react-redux';
-import { setMainMenu } from '../redux/actions';
+import { connect, useDispatch, useSelector} from 'react-redux';
+import { setIndex, setMainMenu } from '../redux/actions';
 
 const Navbar = ({ setMainMenu, data }) => {
   const [isOpen, setIsOpen] = useState(false);
- 
-  console.log(data)
+  const dispatch = useDispatch();
+  const dataIndex = useSelector((state)=>state.menuIndex)
+  
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
 
   useEffect(() => {
-      setMainMenu(data.mainmenu[0]);
+      dispatch(setIndex(0));
+      setMainMenu(data.mainmenu[dataIndex]);
   }, []);
     
   const renderNavLinks = () => {
@@ -24,7 +26,7 @@ const Navbar = ({ setMainMenu, data }) => {
       <Link
         key={index}
         to={link.path}
-        onClick={() => setMainMenu(link)}
+        onClick={() => {setMainMenu(link);dispatch(setIndex(index))}}
         className="block text-2xl mt-0 lg:inline-block  text-white hover:text-gray-300 mr-4"
       >
         {link.name}
@@ -82,6 +84,8 @@ const Navbar = ({ setMainMenu, data }) => {
 
 const mapStateToProps = (state) => ({
   mainMenu: state.mainMenu,
+  menuIndex: state.menuIndex
 });
 
-export default connect(mapStateToProps, { setMainMenu })(Navbar);
+export default connect(mapStateToProps, { setMainMenu, setIndex })(Navbar);
+

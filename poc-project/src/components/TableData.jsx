@@ -4,12 +4,16 @@ export default function DataTable({ data }) {
   const [selectedRows, setSelectedRows] = useState([]);
 
   const handleCheckboxChange = (index) => {
-    if (selectedRows.includes(index)) {
-      setSelectedRows(selectedRows.filter((rowIndex) => rowIndex !== index));
-    } else {
-      setSelectedRows([...selectedRows, index]);
-    }
-  };
+    const updatedData = [...data]; // Create a copy of the data array
+    const activity = updatedData[index].activity;
+    const completed = !activity.completed; // Toggle the completed value
+
+    // Update the completed value of the activity
+    updatedData[index] = {
+      ...activity,
+      completed
+    };
+  }
 
   return (
     <div className="w-full">
@@ -24,20 +28,22 @@ export default function DataTable({ data }) {
           </tr>
         </thead>
         <tbody>
-          {data.accountable.map((accountable, index) => (
+          {data.status.map((accountable, index) => (
             <tr key={index}>
-              <td className="p-3 text-center nowrap">
-                <input
-                  type="checkbox"
-                  checked={selectedRows.includes(index)}
-                  onChange={() => handleCheckboxChange(index)}
-                />
-                {data.activities[index]}
+              <td className="p-3 text-center nowrap" style={{ width: '20%' }}>
+                <label className="checkbox-inline">
+                  <input
+                    type="checkbox"
+                    checked={selectedRows.includes(index) || data.activities[index].completed}
+                    onChange={() => handleCheckboxChange(index)}
+                  />
+                  {data.activities[index].activity}
+                </label>
               </td>
-              <td className="p-3 text-center nowrap">{accountable}</td>
-              <td className="p-3 text-center nowrap">{data.artifact[index]}</td>
-              <td className="p-3 text-center nowrap">{data.due_date[index]}</td>
-              <td className="p-3 text-center nowrap">{data.status[index]}</td>
+              <td className="p-3 text-center nowrap" style={{ width: '20%' }}>{accountable}</td>
+              <td className="p-3 text-center nowrap" style={{ width: '20%' }}>{data.artifact[index]}</td>
+              <td className="p-3 text-center nowrap" style={{ width: '20%' }}>{data.due_date[index]}</td>
+              <td className="p-3 text-center nowrap" style={{ width: '20%' }}>{data.status[index]}</td>
             </tr>
           ))}
         </tbody>
