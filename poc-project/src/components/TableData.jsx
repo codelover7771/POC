@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function DataTable({ data }) {
   const [selectedRows, setSelectedRows] = useState([]);
+  const [isCompleted, setIsCompleted] = useState(false);
 
   const handleCheckboxChange = (index) => {
     const updatedData = [...data]; // Create a copy of the data array
@@ -14,6 +15,14 @@ export default function DataTable({ data }) {
       completed
     };
   }
+
+console.log(isCompleted)
+
+  useEffect(() => {
+    // Check if all activities are completed
+    const allCompleted = data.activities.map(item => item.completed);
+    setIsCompleted(allCompleted);
+  }, [data]);
 
   return (
     <div className="w-full">
@@ -48,6 +57,7 @@ export default function DataTable({ data }) {
           ))}
         </tbody>
       </table>
+      {isCompleted && <p>All activities are completed.</p>}
     </div>
   );
 }

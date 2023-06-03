@@ -5,6 +5,8 @@ const VerticalTabs = ({ menuName }) => {
   const [activeTab, setActiveTab] = useState(0);
   const [activeProcess, setActiveProcess] = useState(0);
 
+
+
   const handleTabClick = (index) => {
     setActiveTab(index);
   };
@@ -40,7 +42,7 @@ const VerticalTabs = ({ menuName }) => {
         <div className='py-2 px-4 bg-white'>{activeProcess}</div>
       </div>
       <div className="w-3/4">
-        {menuName && menuName.submenu && Array.isArray(menuName.submenu) && (
+        {menuName && menuName.submenu && Array.isArray(menuName.submenu) &&  (
           <TableData data={menuName.submenu[activeTab]} />
         )}
       </div>
