@@ -3,7 +3,7 @@ import { SET_MAIN_MENU,SET_INDEX } from './actions';
 
 const initialState = {
   mainMenu: [],
-  menuIndex : 0,
+  menuIndex : null
 };
 
 const rootReducer = (state = initialState, action) => {

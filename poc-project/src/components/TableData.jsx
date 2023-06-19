@@ -2,27 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 export default function DataTable({ data }) {
   const [selectedRows, setSelectedRows] = useState([]);
-  const [isCompleted, setIsCompleted] = useState(false);
 
-  const handleCheckboxChange = (index) => {
-    const updatedData = [...data]; // Create a copy of the data array
-    const activity = updatedData[index].activity;
-    const completed = !activity.completed; // Toggle the completed value
-
-    // Update the completed value of the activity
-    updatedData[index] = {
-      ...activity,
-      completed
-    };
-  }
-
-console.log(isCompleted)
-
-  useEffect(() => {
-    // Check if all activities are completed
-    const allCompleted = data.activities.map(item => item.completed);
-    setIsCompleted(allCompleted);
-  }, [data]);
 
   return (
     <div className="w-full">
@@ -44,12 +24,12 @@ console.log(isCompleted)
                   <input
                     type="checkbox"
                     checked={selectedRows.includes(index) || data.activities[index].completed}
-                    onChange={() => handleCheckboxChange(index)}
+                   
                   />
                   {data.activities[index].activity}
                 </label>
               </td>
-              <td className="p-3 text-center nowrap" style={{ width: '20%' }}>{accountable}</td>
+              <td className="p-3 text-center nowrap" style={{ width: '20%' }}>{data.accountable[index]}</td>
               <td className="p-3 text-center nowrap" style={{ width: '20%' }}>{data.artifact[index]}</td>
               <td className="p-3 text-center nowrap" style={{ width: '20%' }}>{data.due_date[index]}</td>
               <td className="p-3 text-center nowrap" style={{ width: '20%' }}>{data.status[index]}</td>
@@ -57,7 +37,6 @@ console.log(isCompleted)
           ))}
         </tbody>
       </table>
-      {isCompleted && <p>All activities are completed.</p>}
     </div>
   );
 }

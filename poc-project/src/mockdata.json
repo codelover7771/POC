@@ -1,0 +1,36 @@
+{
+  "current_menu": 1,
+  "total_menu": 4,
+  "mainmenu": [
+    {
+      "name": "Paper Formulation",
+      "path": "/",
+      "id": 1,
+      "status": "incomplete",
+      "current_submenu": 1,
+      "total_submenu": 3,
+      "submenu": [
+        {
+          "name": "Procurement of Samples",
+          "id": 1,
+          "status": "incomplete",
+          "activity": 1,
+          "current_activity": 1,
+          "total_activities": 3,
+          "activities": [
+            {
+              "activity": {
+                "id": 1,
+                "name": "sample_from_customer"
+              },
+              "due_date": "1",
+              "accountable": "John",
+              "status": false,
+              "artifact": "Report A"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

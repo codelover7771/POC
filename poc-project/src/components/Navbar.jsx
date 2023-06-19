@@ -3,30 +3,27 @@ import { Link } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { connect, useDispatch, useSelector} from 'react-redux';
-import { setIndex, setMainMenu } from '../redux/actions';
+import {setMainMenu } from '../redux/actions';
 
 const Navbar = ({ setMainMenu, data }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
-  const dataIndex = useSelector((state)=>state.menuIndex)
-  
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
 
-  useEffect(() => {
-      dispatch(setIndex(0));
-      setMainMenu(data.mainmenu[dataIndex]);
-  }, []);
+  // useEffect(() => {
+  //     setMainMenu(data.mainmenu);
+  // }, []);
     
   const renderNavLinks = () => {
     return data.mainmenu?.map((link, index) => (
-        <>
+        <div key={index}>
       <Link
         key={index}
         to={link.path}
-        onClick={() => {setMainMenu(link);dispatch(setIndex(index))}}
+        onClick={() => {setMainMenu(link)}}
         className="block text-2xl mt-0 lg:inline-block  text-white hover:text-gray-300 mr-4"
       >
         {link.name}
@@ -34,11 +31,11 @@ const Navbar = ({ setMainMenu, data }) => {
       {
         index < data.mainmenu.length-1 
         ? 
-        <AiOutlineArrowRight className='block text-lg mt-4 lg:inline-block  text-white hover:text-gray-300 mr-4'>
+        <AiOutlineArrowRight key={index} className='block text-lg mt-4 lg:inline-block  text-white hover:text-gray-300 mr-4'>
         </AiOutlineArrowRight>
          : null
       }
-      </>
+      </div>
     ));
   };
 
